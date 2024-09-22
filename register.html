@@ -1,55 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<title>欢迎进入注册系统</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="/static/css/css.css">
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-	<script src="/static/js/tilt.jquery.min.js"></script>
+<meta charset="utf-8">
+<title>注册</title>
 </head>
 <body>
-	<div class="content">
-		<div class="frame">
-			<div class="left js-tilt">
-				<h3>1909班官网</h3>
-
-			</div>
-			
-			<div class="right">
-			    <h1>1909班官网注册系统</h1>
-				<h5>同学们快点来注册哦</h5>
-				<hr>
-				<form  action="/proc_register" method="post">
-					<div class="input_class">
-						<span class="emoji">&#128587</span>
-						<input name="user" required  placeholder="请输入你的用户名">
-						<div class="focus"></div>
-					</div>
-					<div class="input_class">
-						<span class="emoji">&#128272</span>
-						<input type="password" name="pwd" required placeholder="请输入你的密码">
-						<div class="focus"></div>
-					</div>
-					<div class="input_class">
-						<span class="emoji">&#128272</span>
-						<input type="password" name="pwd2" required  placeholder="再次输入密码">
-						<div class="focus"></div>
-					</div>
-					
-					<button>注册并登录</button>
-				</form>
-
-				<p>已有账号？</p>
-				<a href="/login">立即登录</a>
-			</div>
-		</div>
-	</div>
-	
-	<script>
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
+	<form action="register.php" method="post">
+		<h1>用户注册</h1>
+		<label>用户名：</label>
+		<input type="text" name="username">
+		<label>密码：</label>
+		<input type="password" name="userPwd">
+		<label>确认密码：</label>
+		<input type="password" name="reuserPwd">
+		<label>编号：</label>
+		<input type="text" name="code"> 
+		<input type="submit" value="register">
+	</form>
 </body>
 </html>
