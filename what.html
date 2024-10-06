@@ -1,21 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>1909班简介</title>
-    <link rel="icon" href="/1909班班徽.jpg" sizes="16x16">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1909班简介</title>
+  <link rel="icon" href="/1909班班徽.jpg" sizes="16x16">
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color:orange;
+    }
+
+    header {
+      background-color: lightblue;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 20px 20px 20px 20px;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 50px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .position {
+      margin-bottom: 40px;
+    }
+
+    .position h3 {
+      margin: 0;
+    }
+
+    .position ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .position ul li {
+      margin-bottom: 10px;
+    }
+
+    a.apply-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    a.apply-button:hover {
+      background-color: #555;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    div,h2,h3,#v{
+        text-align:center;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+
+  </style>
 </head>
 <body>
-    <a href="/index.html">首页</a>
-    <p>309班 2019年 - 2023年</p>
-    <h2>1909班是唯一一个合法继承309班的班级，前309班历经2位班主任后来到了1909班时代</h2>
-    <h2>309班第一任班主任兼309班第一任语文老师 陈丽丽 2019年-2023年</h2>
-    <h2>309班第二任班主任兼309班第二任英语老师 付远飘 2023年-2023年</h2>
-    <h2>1909班班主任兼1909班第一任语文老师 刘宇灵 2023年-至今</h2>
-    <h2>309班第一任数学老师 何国清 2019年-2021年</h2>
-    <h2>309班第二任数学老师 袁志军 2021年-2022年</h2>
-    <h2>309班第三任数学老师及1909班第一任数学老师 马金艳 2022年-2024年</h2>
-    <h2>1909班第二任数学老师 何小勇 2024年-至今</h2>
-    
+  <header class="navbar">
+    <h1>1909班简介</h1>
+    <nav>
+      <ul>
+        <li><a href="#positions">1909班历史</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+
+  <section id="positions">
+    <h3>1909班历史</h3>
+    <div class="position">
+      <ul>
+      <h2>309班 2019年 - 2023年</h2>
+      <h2>1909班是唯一一个合法继承309班的班级，前309班历经2位班主任后来到了1909班时代</h2>
+      <h2>309班第一任班主任兼309班第一任语文老师 陈丽丽 2019年-2023年</h2>
+      <h2>309班第二任班主任兼309班第二任英语老师 付远飘 2022年-2023年</h2>
+      <h2>309班第一任英语老师 邓** 2021年-2022年</h2>
+      <h2>1909班第一任英语老师 唐欢 2023-2024</h2>
+      <h2>1909班第二任英语老师  胡** 2024-至今</h2>    
+      <h2>1909班班主任兼1909班第一任语文老师 刘宇灵 2023年-至今</h2>
+      <h2>309班第一任数学老师 何国清 2019年-2021年</h2>
+      <h2>309班第二任数学老师 袁志军 2021年-2022年</h2>
+      <h2>309班第三任数学老师及1909班第一任数学老师 马金艳 2022年-2024年</h2>
+      <h2>1909班第二任数学老师 何小勇 2024年-至今</h2>
+      <a href="/index.html">首页</a>
+      </ul>
+
+    </div>
+
+
+
+  </section><br><br><br><br><br><br><br>
+
+
+  <footer>
+    <p>&copy; 2024 fz联盟. 版权所有.</p>
+  </footer>
+  <script>
+        const navbar = document.querySelector('.navbar');
+        const navbarOffsetTop = navbar.offsetTop;
+        
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset >= navbarOffsetTop) {
+            navbar.classList.add('fixed');
+          } else {
+            navbar.classList.remove('fixed');
+          }
+        });
+  </script>
 </body>
 </html>
