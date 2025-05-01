@@ -3,50 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1909班官网</title>
+    <title>1909班官网 - FZ联盟</title>
     <link rel="icon" href="/1909班班徽.jpg" sizes="16x16">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --text-color: #34495e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin: 1.5em 0 0.8em;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 0.5em;
+        }
+
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #2980b9;
+        }
+
+        .update-log {
+            margin: 2rem 0;
+            padding-left: 1.5rem;
+            border-left: 3px solid #ecf0f1;
+        }
+
+        .update-log li {
+            margin: 0.8rem 0;
+            padding: 0.5rem 1rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1rem;
+            color: #7f8c8d;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>关于FZ联盟与本网站</h1>
+        <p class="highlight">FZ联盟祝您劳动节快乐！劳动人民万岁，向每一位劳动人民致敬</p>
+        <p>FZ联盟成立于2024年4月6日，致力于为1909班做出更多贡献。</p>
+        <p>我们联盟采用高度自由的管理制度，如对您造成任何不便，请联系：<a href="mailto:dxzzhangdeshai@163.com">dxzzhangdeshai@163.com</a></p>
+        <p>感谢您对FZ联盟的支持和关注！</p>
 
+        <section class="update-log">
+            <h2>官网更新日志</h2>
+            <div class="year-section">
+                <h3>2024年</h3>
+                <ul>
+                    <li>8月19日 官网开始建造</li>
+                    <li>9月1日 官网正式内测</li>
+                    <li>9月3日 官网正式上线</li>
+                    <li>9月11日 进行大规模检修</li>
+                    <li>9月12日 网站初步完善</li>
+                    <li>9月14日 美化网页布局</li>
+                    <li>9月22日 因严重错误暂时下线</li>
+                    <li>9月24日 重新上线并开始宣传</li>
+                    <li>9月26日 新增首个小游戏</li>
+                    <li>9月27日 追加两个新游戏</li>
+                    <li>9月28日 修复访问问题</li>
+                    <li>10月1日 论坛搭建成功</li>
+                    <li>10月6日 完成视觉升级</li>
+                    <li>10月7日 更新日志页面</li>
+                    <li>10月1日 论坛服务终止</li>
+                    <li>11月3日 官网无限期停更</li>
+                    <li>12月3日 恢复更新</li>
+                    <li>12月6日 新增1910班分支</li>
+                    <li>12月25日 迁移至国内服务器</li>
+                </ul>
+            </div>
+            <div class="year-section">
+                <h3>2025年</h3>
+                <ul>
+                    <li>3月25日 接入AI功能</li>
+                    <li>5月1日 全面视觉升级</li>
+                </ul>
+            </div>
+            <a href="/" class="home-link">返回首页</a>
+        </section>
 
-    	  <div class="container">
-    		<h1 class="text-center py-3">关于fz联盟与本网站</h1>
-    		<p style="color:red">fz联盟祝您圣诞节快乐！</p>
-    		<p>fz联盟成立于2024年4月6号，致力于为1909班做出更多贡献</p>
-    		<p>然而我们联盟采用高度自由，无严格要求成员的制度，如对您有了冒犯，请联系我<a href="#">dxzzhangdeshai@163.com</a>我们会加以整改</p>
-    		<p>感谢您对fz联盟的支持和关注！</p><br><br>
-    		<h1>官网更新 日志</h1>
-    		<ul>
-    			<h3>2024年</h3>
-    			<li class="justify">8月19号1909班官网开始建造</li>
-    			<li class="justify">9月1号1909班官网正式内测</li>
-    			<li class="justify">9月3号1909班官网正式上线</li>
-    			<li class="justify">9月11号1909班官网进行大规模检修</li>
-    			<li class="justify">9月12号1909班官网初步完善</li>
-    			<li class="justify">9月14号1909班官网美化网页布局</li>
-    			<li class="justify">9月22号1909班官网由于严重错误被迫下线</li>
-    			<li class="justify">9月24号1909班官网重新上线并在班内开始宣传</li>
-    			<li class="justify">9月26号1909班官网增加一个小游戏</li>
-    			<li class="justify">9月27号1909班官网陆续增加了两个游戏</li>
-    			<li class="justify">9月28号对网站无法进入问题进行修复</li>
-    			<li class="justify">10月1号1909班论坛搭建成功</li>
-			<li class="justify">10月6号1909班官网的大规模美化完成</li>
-			<li class="justify">10月7号1909班官网更新了日志页面</li>
-			<li class="justify">10月1号1909班论坛报废</li>
-			<li class="justify">11月3号1909班官网进行无限期停更</li>
-			<li class="justify">12月3号1909班官网恢复更新</li>
-			<li class="justify">12月6号1909班官网更新了1910班分支</li>
-			<li class="justify">12月25号1909班官网迁入了国内，解决了国内无法访问的问题</li>
-                        <a href="/">首页</a>
-		</ul>
-		<h1 style="color:red">特别鸣谢</h1>
-		<img src="/1909班班徽.jpg" width="300" height="300">
-                <p>1909班班徽</p>
-		<img src="/头像1.jpg" width="300" height="300">
-		<p>在此感谢“花果山水龙头”为班徽做出的贡献</p>
-    	  </div>
-    	  </div>
-    	</div>
-	<p>&copy; 2024 fz联盟. 版权所有.</p>
+        <section class="acknowledgement">
+            <h2 class="highlight">特别鸣谢</h2>
+            <div class="gallery">
+                <figure>
+                    <img src="/1909班班徽.jpg" alt="1909班班徽">
+                    <figcaption>1909班班徽</figcaption>
+                </figure>
+                <figure>
+                    <img src="/头像1.jpg" alt="贡献者头像">
+                    <figcaption>花果山水龙头（班徽设计贡献者）</figcaption>
+                </figure>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024-2025 FZ联盟. 保留所有权利.</p>
+    </footer>
 </body>
 </html>
