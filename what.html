@@ -1,158 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1909班简介</title>
-  <link rel="icon" href="/1909班班徽.jpg" sizes="16x16">
-  
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color:orange;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1909班历史传承</title>
+    <link rel="icon" href="/1909班班徽.jpg" sizes="16x16">
+    <style>
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #FF9800;
+            --text-light: #ffffff;
+            --section-spacing: 80px;
+        }
 
-    header {
-      background-color: lightblue;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      border-radius: 20px 20px 20px 20px;
-    }
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding-top: 60px;
+            background-color: #FFF3E0;
+            line-height: 1.6;
+        }
 
-    h1 {
-      margin: 0;
-    }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-color), #1976D2);
+            color: var(--text-light);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
 
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
+        .navbar h1 {
+            margin: 0;
+            font-size: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
 
-    nav ul li {
-      display: inline-block;
-      margin-left: 20px;
-    }
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
 
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-    }
+        .nav-menu a {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
 
-    section {
-      padding: 50px;
-    }
+        .nav-menu a:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
 
-    h2 {
-      margin-bottom: 20px;
-    }
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--section-spacing) 2rem;
+        }
 
-    .position {
-      margin-bottom: 40px;
-    }
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 2rem 0;
+        }
 
-    .position h3 {
-      margin: 0;
-    }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--primary-color);
+        }
 
-    .position ul {
-      margin-top: 10px;
-      padding-left: 20px;
-    }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
 
-    .position ul li {
-      margin-bottom: 10px;
-    }
+        .timeline-item:hover {
+            transform: translateX(10px);
+        }
 
-    a.apply-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #333;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -18px;
+            top: 24px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            border: 2px solid #fff;
+        }
 
-    a.apply-button:hover {
-      background-color: #555;
-    }
+        footer {
+            background-color: #333;
+            color: var(--text-light);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: var(--section-spacing);
+        }
 
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    div,h2,h3,#v{
-        text-align:center;
-    }
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 999;
-    }
+        .back-home {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
 
+        .back-home:hover {
+            background-color: #F57C00;
+            box-shadow: 0 4px 12px rgba(245,124,0,0.3);
+        }
 
-  </style>
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .timeline {
+                padding-left: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="navbar">
-    <h1>1909班简介</h1>
-    <nav>
-      <ul>
-        <li><a href="#positions">1909班历史</a></li>
+    <header class="navbar">
+        <h1>1909班历史传承</h1>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#positions">班级沿革</a></li>
+                <li><a href="/index.html">返回首页</a></li>
+            </ul>
+        </nav>
+    </header>
 
-      </ul>
-    </nav>
-  </header>
+    <section id="positions">
+        <div class="timeline">
+            <article class="timeline-item">
+                <h2>309班时期 (2019-2023)</h2>
+                <p>1909班是唯一合法继承309班的班级，前309班历经两任班主任后进入1909班时代</p>
+            </article>
 
+            <article class="timeline-item">
+                <h3>历任班主任</h3>
+                <ul>
+                    <li>陈丽丽老师（语文）2019-2023</li>
+                    <li>付远飘老师（英语）2022-2023</li>
+                </ul>
+            </article>
 
-  <section id="positions">
-    <h3>1909班历史</h3>
-    <div class="position">
-      <ul>
-      <h2>309班 2019年 - 2023年</h2>
-      <h2>1909班是唯一一个合法继承309班的班级，前309班历经2位班主任后来到了1909班时代</h2>
-      <h2>309班第一任班主任兼309班第一任语文老师 陈丽丽 2019年-2023年</h2>
-      <h2>309班第二任班主任兼309班第二任英语老师 付远飘 2022年-2023年</h2>
-      <h2>309班第一任英语老师 邓** 2021年-2022年</h2>
-      <h2>1909班第一任英语老师 唐欢 2023-2024</h2>
-      <h2>1909班第二任英语老师  胡** 2024-至今</h2>    
-      <h2>1909班班主任兼1909班第一任语文老师 刘宇灵 2023年-至今</h2>
-      <h2>309班第一任数学老师 何国清 2019年-2021年</h2>
-      <h2>309班第二任数学老师 袁志军 2021年-2022年</h2>
-      <h2>309班第三任数学老师及1909班第一任数学老师 马金艳 2022年-2024年</h2>
-      <h2>1909班第二任数学老师 何小勇 2024年-至今</h2>
-      <a href="/index.html">首页</a>
-      </ul>
+            <article class="timeline-item">
+                <h3>学科教师团队</h3>
+                <div class="teacher-list">
+                    <h4>英语学科：</h4>
+                    <ul>
+                        <li>邓**老师（2021-2022）</li>
+                        <li>唐欢老师（2023-2024）</li>
+                        <li>胡**老师（2024-至今）</li>
+                    </ul>
 
-    </div>
+                    <h4>数学学科：</h4>
+                    <ul>
+                        <li>何国清老师（2019-2021）</li>
+                        <li>袁志军老师（2021-2022）</li>
+                        <li>马金艳老师（2022-2024）</li>
+                        <li>何小勇老师（2024-至今）</li>
+                    </ul>
+                </div>
+            </article>
 
+            <article class="timeline-item">
+                <h3>1909班新时代 (2023-至今)</h3>
+                <p>班主任：刘宇灵老师（语文）2023-至今</p>
+            </article>
+        </div>
 
+        <a href="/index.html" class="back-home">返回首页</a>
+    </section>
 
-  </section><br><br><br><br><br><br><br>
+    <footer>
+        <p>&copy; 2024 FZ联盟. 薪火相传，继往开来</p>
+    </footer>
 
+    <script>
+        // 动态时间轴效果
+        document.addEventListener('DOMContentLoaded', () => {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
 
-  <footer>
-    <p>&copy; 2024 fz联盟. 版权所有.</p>
-  </footer>
-  <script>
-        const navbar = document.querySelector('.navbar');
-        const navbarOffsetTop = navbar.offsetTop;
-        
-        window.addEventListener('scroll', () => {
-          if (window.pageYOffset >= navbarOffsetTop) {
-            navbar.classList.add('fixed');
-          } else {
-            navbar.classList.remove('fixed');
-          }
+            timelineItems.forEach(item => {
+                item.style.opacity = 0;
+                item.style.transform = 'translateX(-20px)';
+                item.style.transition = 'all 0.6s ease-out';
+                observer.observe(item);
+            });
         });
-  </script>
+    </script>
 </body>
 </html>
