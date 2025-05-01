@@ -1,184 +1,216 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1909班官网1910分支</title>
-  <link type="text/css"  rel="shortcut icon" href="static/image/logo.png">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color:orange;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1909班官网1910分支</title>
+    <link rel="shortcut icon" href="static/image/logo.png" type="image/png">
+    <style>
+        :root {
+            --primary-color: #FFA500;    /* Orange */
+            --secondary-color: #87CEEB;  /* Light Blue */
+            --dark-color: #333;
+            --light-color: #fff;
+        }
 
-    header {
-      background-color: lightblue;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      border-radius: 20px 20px 20px 20px;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    h1 {
-      margin: 0;
-    }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: var(--primary-color);
+            padding-top: 80px; /* 为固定导航栏留出空间 */
+        }
 
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
 
-    nav ul li {
-      display: inline-block;
-      margin-left: 20px;
-    }
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-    }
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
 
-    section {
-      padding: 50px;
-    }
+        .section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    h2 {
-      margin-bottom: 20px;
-    }
+        .section-header {
+            position: relative;
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+        }
 
-    .position {
-      margin-bottom: 40px;
-    }
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--dark-color);
+        }
 
-    .position h3 {
-      margin: 0;
-    }
+        .card {
+            background: var(--light-color);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
 
-    .position ul {
-      margin-top: 10px;
-      padding-left: 20px;
-    }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--dark-color);
+            color: var(--light-color);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
 
-    .position ul li {
-      margin-bottom: 10px;
-    }
+        .btn:hover {
+            background: #555;
+            transform: translateY(-2px);
+        }
 
-    a.apply-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #333;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
+        footer {
+            background: var(--dark-color);
+            color: var(--light-color);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
 
-    a.apply-button:hover {
-      background-color: #555;
-    }
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .navbar-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
 
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    div,h2,h3,#v{
-        text-align:center;
-    }
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 999;
-    }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
 
-
-  </style>
+            .section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="navbar">
-    <h1>1909班官网1910分支</h1>
-    <nav>
-      <ul>
-        <li><a href="#positions">牛人大作</a></li>
-        <li><a href="#contact">免责声明</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header class="navbar">
+        <div class="navbar-content">
+            <h1>1909班官网1910分支</h1>
+            <nav>
+                <ul>
+                    <li><a href="#positions">牛人大作</a></li>
+                    <li><a href="#contact">免责声明</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <main>
+        <section id="positions" class="section">
+            <div class="section-header">
+                <h2>牛人大作</h2>
+            </div>
 
-  <section id="positions">
-    <h2>--------------------牛人大作----------------------</h2>
-    <div class="position">
-      <h3>---</h3>
-      <h3>肖诗筠 著</h3>
-     
-      <ul>
-	      <h3>第1章 </h3>
-        <h4>唐小喘，一个成绩好又幽默的好学生;她，张雨悬是个体育全能又聪明的学霸。他们青梅竹马,两小无猜。</h4>
-    <h4>那是一个万里无云的日子,可太阳的光芒却十分暗淡,像是被什么遮住了。一所幼儿园开学了,人们来来往往,热闹极了。这一切对刚上幼儿园的唐小常来说无疑是新奇又陌生 的，他仔细打量着周围的一切:高大的建筑,良好的环境,友好的同学…咦!那是谁?好漂亮!</h4>
-    <h4>-个女孩在茫茫人海中,如同璀璨的群星。她不经间的回头,宛若仙女跌入红尘，几根发丝被微风吹拂而起。真美呀,她叫什么名字啊?”唐小喘不禁想到。他扯了扯妈妈的衣角，奶声奶气地问:“妈妈，前面那个漂亮的女孩是谁呀了她叫什么名字了”</h4>
-    <h4>妈妈…
-“我儿子该不会是早恋了吧，不行不行，这不应该啊。
-妈妈立刻摇了摇头，否认了配的猜想。
-她无奈,却也只能这样,毕竟孩子还这么小,可能连喜欢是什么都不知道。妈妈摸了摸儿子的头,宠溺地答 :“那个漂亮女孩是你的同学，以后你还会见到她，找个机会自己去问她吧。”</h4>
-	<h4>时光在流逝,万物在生长,唐小喘对她的爱和思念越来越深，可也却生然不知。（未完待续)</h4>
-	<h3>未完待续,看完整版请关注1909班班报1910分支</h3>
-      </ul>
-      <a href="#contact" class="apply-button">--------------------诗词二首----------------------</a>
-    </div>
+            <div class="card">
+                <article>
+                    <h3>肖诗筠 作品</h3>
+                    <div class="content">
+                        <h4>第1章</h4>
+                        <p>唐小喘，一个成绩好又幽默的好学生；她，张雨悬是个体育全能又聪明的学霸。他们青梅竹马，两小无猜。</p>
+                        <p>那是一个万里无云的日子，可太阳的光芒却十分暗淡，像是被什么遮住了。一所幼儿园开学了，人们来来往往，热闹极了。这一切对刚上幼儿园的唐小喘来说无疑是新奇又陌生的，他仔细打量着周围的一切：高大的建筑、良好的环境、友好的同学……咦！那是谁？好漂亮！</p>
+                        <p>一个女孩在茫茫人海中，如同璀璨的群星。她不经意间的回头，宛若仙女跌入红尘，几根发丝被微风吹拂而起。“真美呀，她叫什么名字啊？”唐小喘不禁想到。他扯了扯妈妈的衣角，奶声奶气地问：“妈妈，前面那个漂亮的女孩是谁呀？她叫什么名字？”</p>
+                        <p>妈妈——“我儿子该不会是早恋了吧，不行不行，这不应该啊。”妈妈立刻摇了摇头，否认了自己的猜想。她无奈，却也只能这样，毕竟孩子还这么小，可能连喜欢是什么都不知道。妈妈摸了摸儿子的头，宠溺地答道：“那个漂亮女孩是你的同学，以后你还会见到她，找个机会自己去问她吧。”</p>
+                        <p>时光在流逝，万物在生长，唐小喘对她的爱和思念越来越深，可也浑然不知。</p>
+                    </div>
+                    <a href="#contact" class="btn">诗词二首</a>
+                </article>
+            </div>
 
-    <div class="position">
-      <h3>刘帅杰拉稀歌</h3>
-   <h4>
+            <div class="card">
+                <article>
+                    <h3>帅杰总集</h3>
+                    <div class="content">
+                        <h4>帅杰拉稀歌</h4>
+                        <p>刘帅杰来真奇妙，国潮外卖吃得饱。<br>
+                           肚中翻腾如浪潮，岂料今日拉稀焦。<br>
+                           洗手间前人排队，怒骂厕所真狭小。<br>
+                           笑问何时能解脱，众人哄笑声一啸。<br>
+                           </p>
+                        
+                        <h4>十二月二十七日有感</h4>
+                        <p>刘帅杰背唐超心狠，考试及格却遭雷震。<br>
+                           分数及格他笑不休，雷声一响成灰飞尘。<br>
+                           试卷刚交雷声急，上天不容此等事。<br>
+                            及格虽好命难保，天道惩戒有何奇！<br>
+                           </p>
+                    </div>
+                    <a href="/index.html" class="btn">返回首页</a>
+                </article>
+            </div>
+        </section>
 
-    刘帅杰来真奇妙，国潮外卖吃得饱。
-    肚中翻腾如浪潮，岂料今日拉稀焦。
-    洗手间前人排队，怒骂厕所真狭小。
-    笑问何时能解脱，众人哄笑声一啸。</h4>
+        <section id="contact" class="section">
+            <div class="section-header">
+                <h2>免责声明</h2>
+            </div>
+            <div class="card">
+                <p>纯属搞笑，没有恶意，如果不服，就当放屁！</p>
+            </div>
+        </section>
+    </main>
 
-   <h4>
-------------------------------词一首--------------------------------
-    </h4>
-    <h3>十二月二十七日刘帅杰背叛唐超考试及格了被雷劈死</h3>
-    <h4>刘帅杰背唐超心狠，考试及格却遭雷震。</h4>
-    <h4>分数及格他笑不休，雷声一响成灰飞尘。</h4>
-    <h3>试卷刚交雷声急，上天不容此等事。及格虽好命难保，天道惩戒有何奇！</h3>
-    
+    <footer>
+        <p>&copy; 1909fz联盟. 版权所有.</p>
+    </footer>
 
-
-   <p><a style="text-decoration: none;"  target="_blank" href="/index.html">返回首页</a></p>
-      </ul>
-
-    </div>
-
-  </section><br><br><br><br><br><br><br>
-
-  <section id="contact" style="text-align:center">
-    <h2>免责声明</h2>
-    <p>纯属搞笑，没有恶意，如果不服，就当放屁！</p>
-    
-  </section>
-
-  <footer>
-    <p>&copy; 1909fz联盟. 版权所有.</p>
-  </footer>
-  <script>
-        const navbar = document.querySelector('.navbar');
-        const navbarOffsetTop = navbar.offsetTop;
-        
-        window.addEventListener('scroll', () => {
-          if (window.pageYOffset >= navbarOffsetTop) {
-            navbar.classList.add('fixed');
-          } else {
-            navbar.classList.remove('fixed');
-          }
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
-  </script>
+
+        // 导航栏交互
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            window.scrollY > 100 
+                ? navbar.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)'
+                : navbar.style.boxShadow = 'none';
+        });
+    </script>
 </body>
 </html>
