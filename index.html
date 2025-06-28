@@ -8,11 +8,42 @@
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/index.css">
-  
+    
+    <style>
+        /* 隐藏播放器控件 */
+        #musicPlayer {
+            display: none;
+        }
+        
+        /* 美观的音乐控制按钮 */
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            transition: all 0.3s;
+        }
+        
+        .music-control:hover {
+            background: rgba(0,0,0,0.9);
+            transform: scale(1.1);
+        }
+    </style>
+    
   </head>
 <body>
+
    
-    
     <!--导航-->
     <div class="up">
         <p>1909班官网</p>
@@ -22,21 +53,90 @@
     <!--图-->
     <img src="/图片.png" class="banner">
 
+
+
+
+
+
+    <audio id="musicPlayer" loop>
+        <source src="/送别.mp3" type="audio/mpeg">
+        
+    </audio>
     
+    <!-- 美观的控制按钮 -->
+    <div class="music-control" id="musicControl">♪</div>
+
+    <script>
+        const audio = document.getElementById('musicPlayer');
+        const controlBtn = document.getElementById('musicControl');
+        let isFirstPlay = true;
+        
+        // 尝试自动播放
+        window.addEventListener('DOMContentLoaded', () => {
+            // 确保音乐已加载
+            audio.load();
+            
+            // 尝试播放（大多数现代浏览器需要用户交互）
+            audio.play().catch(error => {
+                console.log('自动播放被阻止，需要用户点击:', error);
+                controlBtn.textContent = '▶';
+            });
+        });
+        
+        // 处理用户控制
+        controlBtn.addEventListener('click', () => {
+            if (isFirstPlay) {
+                // iOS需要用户点击后才能播放音频
+                audio.play().then(() => {
+                    controlBtn.textContent = '⏸';
+                    isFirstPlay = false;
+                }).catch(error => {
+                    console.error('播放失败:', error);
+                });
+            } else {
+                if (audio.paused) {
+                    audio.play();
+                    controlBtn.textContent = '⏸';
+                } else {
+                    audio.pause();
+                    controlBtn.textContent = '▶';
+                }
+            }
+        });
+    </script>
 
     
+
+
 
     <div class="title">
         <img src="/other1.png">
-        <h1>由于学业问题，该网站暂时还比较简陋，以后将逐步升级</h1>
-        <p>Due to academic problems, the website is still relatively rudimentary for the time being, and will be gradually upgraded in the future</p>
+        <h1>这里的每一片树叶，都听过我们的笑声；​​这里的每一寸光阴，都刻着我们的名字。别了，蓉锋！别了，9班！</h1>
+        <p>Every leaf here has heard our laughter; every moment here is carved with our names. Farewell, Rongfeng! Farewell, Class 9!</p>
     </div>
     <div class="studio">
         <div class="letter">
-            <h2>该网站由1909班fz联盟赞助，该网站内容由dxz打造</h2>
+            <h2>刻入生命的年轮——致我们熔铸一体的“1909班”时光</h2>
             
             <br>
-            <p>前进道路上，我们必须坚持以马克思列宁主义、毛泽东思想、邓小平理论、“三个代表”重要思想、科学发展观、新时代中国特色社会主义思想为指导，坚持解放思想和实事求是有机统一！</p>
+            <p>六载春秋，忽然而已。从懵懂稚童到意气少年，​这方小小的天地，早已浸透了我们的笑声、汗水和最最纯粹的心跳！​</p>
+            <p>怎能忘：​课堂上笔尖摩挲的细响，藏着多少智慧的微光？​​</p>
+            <p>怎能忘：​课间走廊里追逐的脚步，踏出了无忧无虑的乐章！​​</p>
+            <p>怎能忘：​考场上彼此紧握的手心，那共同穿越紧张的无声力量！​​​</p>
+            <p>​是你，是你，都是你——我最亲爱的同学！​​​​</p>
+            <p>你分享的那块糖果，比什么都甜；​​​​</p>
+            <p>​你搀扶的那只手臂，比什么都暖；​​​​</p>
+            <p>你递来的那块橡皮，擦亮了时光；​​​​</p>
+            <p>​今日背起行囊——行囊里装的岂止是书本？​​​​​</p>
+            <p>​是整座喧闹的教室！是整片撒欢的操场！是54颗同频跳动过整整六年的心脏！​​​​​</p>
+            <p>​散作满天星？不！我们是星群！纵然光年相隔，​​​那束从“1909班”原点迸发的情感引力——​​永生永世，牵引我们魂兮归来！​​​​​</p>
+            <p>教室的粉笔灰，落成了我们眉间的星光；</p>
+            <p>操场的塑胶粒，嵌进了奔跑的脚掌，成了奔向远方的图腾！​​​​​</p>
+            <p>​那些为一道题争红的脸，为输掉比赛憋住的泪，比赛荒诞跑调却笑得最大声的瞬间……​​​​</p>
+            <p>​早已不是零散碎片——它们沸腾、交融，凝成一块名为“1909班”的生命合金！沉甸甸，烙在心口最深处！​​​​​</p>
+            <p>​去飞吧！用被这9班淬炼过的翅膀！​</p>
+            <h4>​世界再大，回眸处——​</h4>
+            <h4>54张笑脸，永远是我们刺破黑暗的，最亮的光！​​</h4>
 
         </div>
     </div>
